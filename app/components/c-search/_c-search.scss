@@ -1,0 +1,85 @@
+.c-search {
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex: 0 0 100%;
+    max-width: rem-calc(800);
+    height: rem-calc(60);
+    margin: 0 auto;
+    padding: rem-calc(0 25);
+    color: #ffffff;
+    font-size: rem-calc(16);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: rem-calc(45);
+      display: block;
+      width: rem-calc(20);
+      height: rem-calc(20);
+      transform: translateY(-50%);
+      background: url(../images/search.svg) no-repeat center center;
+      background-size: 100%;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    height: rem-calc(60);
+    margin: 0;
+    padding: rem-calc(0 20 0 56);
+    color: #ffffff;
+    font-size: rem-calc(16);
+    border: none;
+    border-radius: rem-calc(5);
+    background: rgba(255,255,255,0.4);
+
+    &:focus {
+      outline: none;
+      background: rgba(255,255,255,0.5);
+    }
+    &::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+  }
+
+  &__result {
+    position: absolute;
+    top: rem-calc(60);
+    left: rem-calc(25);
+    right: rem-calc(25);
+    z-index: 100;
+    width: calc(100% - #{rem-calc(50)});
+    margin: 0;
+    padding: rem-calc(20 0);
+    list-style: none;
+    border-radius: rem-calc(5);
+    background: rgba($gradient1,0.9);
+
+    &item {
+      margin: 0;
+      padding: 0;
+    }
+    &link {
+      display: block;
+      margin: 0;
+      padding: rem-calc(6 20);
+      text-decoration: none;
+      color: #ffffff;
+
+      &:hover, &:focus {
+        outline: none;
+        background: rgba(255,255,255,0.4);
+      }
+
+    }
+
+    &--hide {
+      display: none;
+    }
+  }
+}

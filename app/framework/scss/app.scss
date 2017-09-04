@@ -1,0 +1,36 @@
+@import
+	"app-settings",
+	"reset";
+
+html {
+	min-height: 100%;
+	font-family: arial, sans-serif;
+	background: linear-gradient(to bottom, $gradient1 0%, $gradient2 100%) no-repeat;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	width: 100%;
+	margin: 0;
+	padding: rem-calc(70 0);
+}
+
+.logo {
+	display: block; //ie10
+	flex: 0 0 auto;
+	margin: auto;
+
+	&__img {
+		display: block;
+		width: rem-calc(140);
+		height: rem-calc(70);
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@import
+	"../../pages/imports",
+	"../../components/imports";

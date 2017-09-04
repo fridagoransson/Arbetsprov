@@ -1,0 +1,123 @@
+$listitem : '.c-searchhistory__listitem';
+$delbtninner : '.c-searchhistory__deletebtninner';
+
+.c-searchhistory {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: rem-calc(32 0);
+  padding: 0;
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: column wrap;
+    margin: 0 auto;
+    padding: rem-calc(25 0);
+    list-style: none;
+    color: #ffffff;
+    background: rgba(255,255,255,0.1);
+    &:empty {
+      display: none;
+    }
+
+    &item {
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+
+      &:hover, &:focus, &.hasfocus {
+        outline: none;
+        background: rgba(255,255,255,0.1);
+      }
+
+      &inner {
+        display: flex;
+        flex: 0 0 100%;
+        max-width: rem-calc(800);
+        margin: 0 auto;
+        padding: rem-calc(0 0 0 45);
+        @media screen and (min-width: 50em) {
+        padding: rem-calc(0 25 0 45);
+        }
+      }
+    }
+
+  }
+
+  &__title {
+  	flex: 0 0 50%;
+    align-self: center;
+    color: #ffffff;
+    font-size: rem-calc(16);
+    padding: rem-calc(0 10 0 0);
+  }
+
+  &__date {
+  	flex: 0 0 30%;
+    align-self: center;
+    letter-spacing: rem-calc(1);
+    color: #ffffff;
+    font-size: rem-calc(12);
+  }
+
+  &__delete {
+  	align-self: center;
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    &btn {
+      display: block;
+      visibility: hidden;
+      width: rem-calc(60);
+      height: rem-calc(60);
+      margin: 0;
+      padding: rem-calc(20);
+      background: rgba($delete,0.8);
+      #{$listitem}:hover &, #{$listitem}:focus &, #{$listitem}.hasfocus & {
+        visibility: visible;
+      }
+      &:focus, &:hover {
+        outline: none;
+        background: darken($delete,1.2);
+
+        #{$delbtninner} {
+          &:before, &:after {
+            background: #000000;
+          }
+        }
+      }
+
+      &inner {
+        position: relative;
+        display: block;
+        width: rem-calc(20);
+        height: rem-calc(20);
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        border: rem-calc(1) solid $delete;
+        background: #ffffff;
+
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          top: rem-calc(4);
+          left: rem-calc(8);
+          height: rem-calc(10);
+          width: rem-calc(1);
+          background-color: #8d8d8d;
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+
+    }
+
+  }
+}

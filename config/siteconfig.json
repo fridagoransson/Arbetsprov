@@ -1,0 +1,5 @@
+{
+  "csspath": "/stylesheets/app.css",
+  "scriptpath": "/js/app.js",
+  "foo": process.env.NODE_ENV
+}
